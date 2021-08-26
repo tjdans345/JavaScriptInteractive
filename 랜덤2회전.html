@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            body{
+                overflow:hidden;
+            }
+            h1{
+                font-size: 20px;
+            }
+            button{
+                font-size: 20px;
+                padding: 10px 30px;
+                cursor: pointer;
+            }
+            .arrowWrap{
+                margin: 30px;
+            }
+            .arrowWrap img {
+                /* 트랜지션이란 ?
+                    모션이 자동으로 들어간ㄷ
+                */
+                transition: transform 2s ease-in-out;
+                width: 30%;  
+            }
+    </style>
+    <script>
+        window.onload = function() {
+            var resetbtn = document.querySelector(".resetBtn");
+            var startBtn = document.querySelector(".startBtn");
+            var h1 = document.getElementsByTagName("h1")[0];
+            var arrow = document.querySelector(".arrow");
+            var rotateNum = 0;
+
+            startBtn.addEventListener("click", function() {
+                rotateNum = Math.round(Math.random()*360);
+                h1.innerHTML = rotateNum + "deg";
+                
+                arrow.style.transform = "rotate("+rotateNum+"deg)";
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+    
+    <button type="button" class="resetBtn">리셋</button>
+    <button type="button" class="startBtn">회전</button>
+
+    <h1>0deg</h1>
+
+    <div class="arrwWrap">
+        <img src="./up-arrow.svg" alt="arrow" class="arrow" width="250px" height="250px">
+    </div>
+
+
+
+
+</body>
+</html>
