@@ -82,10 +82,6 @@
           // var scroll2 = document.documentElement.scrollTop;
           
           for(var i=0; i<totalNum; i++) {
-            console.log("탑"+section[i].offsetTop);
-            console.log("스크롤"+scroll);
-          console.log("아우터"+window.outerHeight/3);
-          console.log("옵셋"+section[i].offsetHeight);
             if(scroll > section[i].offsetTop - window.outerHeight/3 && scroll < section[i].offsetTop - window.outerHeight/3 + section[i].offsetHeight) {
             pageNum = i;
             break;
